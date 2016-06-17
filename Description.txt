@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: New Products
+SystemName: HomePageNewProductsPlugin
+Version: 1.00
+SupportedVersions: 3.70
+Author: Metin Mustafa
+DisplayOrder: 1
+FileName: Nop.HomePageNewProductsPlugin.dll

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "";
+}
+@model IEnumerable<Nop.Web.Models.Catalog.ProductOverviewModel>
+
+<div class="page recently-added-products-page">
+    <div class="page-title">
+        <h1>@T("Products.NewProducts")</h1>
+    </div>
+    <div class="page-body">
+        @if (Model.Any())
+        {
+            <div class="product-grid">
+                <div class="item-grid">
+                    @foreach (var product in Model)
+                    {
+                        <div class="item-box">
+                            @Html.Partial("_ProductBox", product)
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>
