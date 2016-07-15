@@ -67,15 +67,15 @@ namespace Nop.HomePageNewProductsPlugin.Utils
              * This behavior can increase performance because cached settings will not be cleared 
              * and loaded from database after each update */
             if (configuration.NumberOfRecentlyAddedProducts_OverrideForStore || storeScope == 0)
+            {
                 _settingService.SaveSetting(newProductsSettings, x => x.NumberOfRecentlyAddedProducts, storeScope, false);
-            else if (storeScope > 0)
-                _settingService.DeleteSetting(newProductsSettings, x => x.NumberOfRecentlyAddedProducts, storeScope);
-
-            if (configuration.WidgetZone_OverrideForStore || storeScope == 0)
                 _settingService.SaveSetting(newProductsSettings, x => x.WidgetZone, storeScope, false);
+            }
             else if (storeScope > 0)
+            {
+                _settingService.DeleteSetting(newProductsSettings, x => x.NumberOfRecentlyAddedProducts, storeScope);
                 _settingService.DeleteSetting(newProductsSettings, x => x.WidgetZone, storeScope);
-
+            }
 
             _settingService.ClearCache();
         }
