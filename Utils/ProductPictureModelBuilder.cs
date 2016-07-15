@@ -6,7 +6,7 @@ using Nop.Web.Models.Media;
 
 namespace Nop.HomePageNewProductsPlugin.Utils
 {
-    public class ProductPictureModelBuilder
+    public class ProductPictureModelBuilder : IProductPictureModelBuilder
     {
         private readonly IPictureService _pictureService;
         private readonly MediaSettings _mediaSettings;

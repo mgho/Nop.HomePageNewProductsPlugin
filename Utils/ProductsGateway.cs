@@ -9,18 +9,18 @@ using Nop.Web.Models.Catalog;
 
 namespace Nop.HomePageNewProductsPlugin.Utils
 {
-    public class ProductsGateway
+    public class ProductsGateway : IProductsGateway
     {
         private readonly IProductService _productService;
         private readonly IStoreContext _storeContext;
-        private readonly ProductPictureModelBuilder _pictureModelBuilder;
-        private readonly ProductPriceModelBuilder _priceModelBuilder;
+        private readonly IProductPictureModelBuilder _pictureModelBuilder;
+        private readonly IProductPriceModelBuilder _priceModelBuilder;
 
         public ProductsGateway(
             IProductService productService,
             IStoreContext storeContext,
-            ProductPictureModelBuilder pictureModelBuilder,
-            ProductPriceModelBuilder priceModelBuilder)
+            IProductPictureModelBuilder pictureModelBuilder,
+            IProductPriceModelBuilder priceModelBuilder)
         {
             _productService = productService;
             _storeContext = storeContext;

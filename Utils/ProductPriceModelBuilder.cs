@@ -13,7 +13,7 @@ using Nop.Web.Models.Catalog;
 
 namespace Nop.HomePageNewProductsPlugin.Utils
 {
-    public class ProductPriceModelBuilder
+    public class ProductPriceModelBuilder : IProductPriceModelBuilder
     {
         private bool _forceRedirectionAfterAddingToCart = false;
         private readonly IProductService _productService;
